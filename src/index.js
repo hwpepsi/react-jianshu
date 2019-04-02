@@ -1,14 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoList from './TodoList';
-import {Provider} from 'react-redux'
-import store from './store'
-//provider连接store，让内部所有的组件能够获取store
-const App = (
-    <Provider store={store}>
-        <TodoList />
-    </Provider>
-)
+import App from './App';
+import './style.js'
+import './statics/iconfont/iconfont.css'
 
-ReactDOM.render(App, document.getElementById('root'));
+
+ReactDOM.render(<App />, document.getElementById('root'));
 

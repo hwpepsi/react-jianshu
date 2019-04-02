@@ -1,12 +1,11 @@
-const defaultState ={
-    inputValue:'hello',
-    list:''
-}
-export default (state = defaultState, action) => {
-    if(action.type === "change_input_value"){
-        const newState = JSON.parse(JSON.stringify(state));
-        newState.inputValue = action.value;
-        return newState;
-    }
-    return state;
-}
+import { combineReducers } from 'redux-immutable'
+import {reducer as headerReducer} from '../common/header/store'
+import {reducer as homeReducer} from '../pages/home/store'
+import {reducer as detailReducer } from '../pages/detail/store'
+import {reducer as loginReducer} from '../pages/login/store'
+export default combineReducers({
+    header: headerReducer,
+    home: homeReducer,
+    detail: detailReducer,
+    login: loginReducer
+})
